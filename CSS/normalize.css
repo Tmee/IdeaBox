@@ -1,0 +1,37 @@
+
+
+
+
+a:active{
+    color: 006699;
+}
+a:hover
+{
+  font-weight: bold;
+  outline: 0;
+  color: #669933 ;
+  transition: color 0.5s;
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: initial;
+  transition-delay: initial;
+  text-decoration:none;
+  outline: thin dotted;
+}
+
+h1 {
+    text-decoration:none;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20git push em;
+    display: block;
+    color: #0033CC;
+}
+
+h2 {
+    text-align: center;
+    background-color: #787878;
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
