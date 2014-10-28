@@ -8,6 +8,7 @@ class IdeaBoxApp < Sinatra::Base
     register Sinatra::Reloader
   end
   set :method_override, true
+  set :root, 'lib/app'
 
   get '/' do
     erb :index, locals: {ideas: IdeaStore.all, idea: Idea.new(params)}
