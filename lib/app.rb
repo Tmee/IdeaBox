@@ -23,7 +23,6 @@ class IdeaBoxApp < Sinatra::Base
     idea = IdeaStore.find(id.to_i)
     idea.like!
     IdeaStore.update(id.to_i, idea.to_h)
-    "I like this idea!"
     redirect '/'
   end
 
@@ -35,6 +34,12 @@ class IdeaBoxApp < Sinatra::Base
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
     erb :edit, locals: {idea: idea}
+  end
+
+  get '/*/search' do |text|
+    'hello'
+    idea = IdeaStore.find_words(text)
+    erb :search, locals: {idea: idea}
   end
 
   put '/:id' do |id|

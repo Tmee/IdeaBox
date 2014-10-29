@@ -1,0 +1,28 @@
+<title>Search</title>
+  <body>
+  <h1>Search Results</h1>
+    <div id='container'>
+      <ul>
+        <% idea_search.each do |idea| %>
+          <li>
+            <%= idea.title %><br/>
+            <%= idea.description %>
+              <table border="0">
+                <tr>
+                  <td><form action="/<%= idea.id %>" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" value="delete"/>
+                  </form></td>
+                  <td><form method="get" action="/<%= idea.id %>/edit">
+                    <input type="submit" value='Edit'/>
+                  </form></td>
+                  <td><form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+                    <input type='submit' value="★"/>
+                  </form></td>
+                </tr>
+              </table>
+          </li>
+      </ul>
+
+    </div>
+  </body>

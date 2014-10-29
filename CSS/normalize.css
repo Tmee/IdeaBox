@@ -1,11 +1,43 @@
+.container{
+  position: relative;
+}
 
+.section{
+margin-left:900px;
+}
 
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  display: block;
+}
 
+#main {
+ width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid blue 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+section {
+  margin-left: 900px;
+}
 
 a:active{
     color: 006699;
 }
-a:hover
+a.hover
 {
   font-weight: bold;
   outline: 0;
@@ -19,8 +51,7 @@ a:hover
   outline: thin dotted;
 }
 
-h1 {
-    text-decoration:none;
+h1 {;
     font-size: 2em;
     margin-left: auto;
     margin-right: auto;

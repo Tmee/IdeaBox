@@ -2,13 +2,15 @@ require 'yaml/store'
 
 class Idea
   include Comparable
-  attr_reader :title, :description, :rank, :id
+  attr_reader :title, :description, :rank, :id, :tag, :words
 
   def initialize(attributes = {})
     @title       = attributes["title"]
     @description = attributes["description"]
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
+    @tag         = attributes["tag"] || ''
+    @words       = attributes['words']
   end
 
   def save

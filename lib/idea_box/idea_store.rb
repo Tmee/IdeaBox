@@ -16,6 +16,25 @@ class IdeaStore
     end
   end
 
+  def self.find_words(idea)
+    # idea_search = []
+    # raw_ideas.each do |words|
+    #   idea_search << Idea.new(data.include?(words))
+    # end
+    # idea_search
+    idea_search = []
+    database.transaction do
+      idea_search << database['ideas'].include?(idea)
+    end
+    "hello"
+    idea_search
+  end
+
+  # def self.separate_words_in_idea(idea)
+  #   idea_words = idea.split!
+  #   idea_words
+  # end
+
   def self.database
     return @database if @database
 
