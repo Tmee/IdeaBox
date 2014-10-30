@@ -2,10 +2,13 @@
 ideas:
 - title: test
   description: body
+  rank: 2
   tag: tag
 - title: nothing
   description: is in here
+  rank: 1
   tag: ''
 - title: test
   description: ''
+  rank: 2
   tag: ''
