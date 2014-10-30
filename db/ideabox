@@ -12,3 +12,6 @@ ideas:
   description: ''
   rank: 2
   tag: ''
+- title: some idea
+  description: "some bullshit\r\n"
+  tag: different tag
