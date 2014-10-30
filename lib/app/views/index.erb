@@ -21,13 +21,17 @@
 
             <div class="box">
               <h2>Tag Search</h2>
+
                   <% ideas.each do |idea| %>
-                    <% if idea.tag != '' %>
-                  <li>
-                      <%= idea.tag %>
-                  </li>
+                    <% if idea.tag != ''%>
+                      <li>
+                      <form method="get" action="/<%= idea.tag %>/search">
+                            <input type="submit" value='<%= idea.tag %>'/>
+                      </form>
+                      </li>
                     <%end%>
-                  <%end%>
+
+                <%end%>
 
                   <li><a href="http://turing.io">link</a></li>
                   <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Something Else</a></li>

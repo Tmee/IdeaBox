@@ -3,3 +3,6 @@ ideas:
 - title: test
   description: some text
   tag: tags upon tags
+- title: another test
+  description: "some test\r\n"
+  tag: tags upon tags
