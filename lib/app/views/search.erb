@@ -3,6 +3,9 @@
   <h1>Search Results</h1>
     <div id='container'>
       <ul>
+      <p>SHOW ME SOME TEXT</p><br/>
+      <%=idea_search%><br/>
+
         <% idea_search.each do |idea| %>
           <li>
             <%= idea.title %><br/>
@@ -22,7 +25,15 @@
                 </tr>
               </table>
           </li>
+          <% end %>
       </ul>
+      <!-- <div class="demo-container">
+       <span class="bubble1"></span>
+       <span class="bubble2"></span>
+       <span class="bubble3"></span>
+       <span class="bubble4"></span>
+
+      </div> -->
 
     </div>
   </body>

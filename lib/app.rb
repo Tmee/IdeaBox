@@ -4,9 +4,7 @@ require 'idea_box'
 
 
 class IdeaBoxApp < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
+  register Sinatra::Reloader
   set :method_override, true
   set :root, 'lib/app'
 
@@ -36,10 +34,9 @@ class IdeaBoxApp < Sinatra::Base
     erb :edit, locals: {idea: idea}
   end
 
-  get '/*/search' do |text|
-    'hello'
-    idea = IdeaStore.find_words(text)
-    erb :search, locals: {idea: idea}
+  get '/search' do
+    idea_search = IdeaStore.search(params[:phrase])
+    erb :search, locals: { idea_search: idea_search }
   end
 
   put '/:id' do |id|

@@ -3,32 +3,44 @@
       <div id="container">
           <h1>IdeaBox</h1>
 
-              <form name="input" method="get" action="/<%=idea%>/search">
-                Search: <input type="text" name='idea'/><br/>
+              <form method="get" action="/search">
+                Search: <input type="text" name='phrase'/><br/>
                 <input type='submit' value='Search Ideas'/>
               </form>
 
-            <form action='/' method='POST'>
-
+            <div class='center'>
               <h2>Your Idea:</h2>
+              <form action='/' method='POST'>
               <input type='text' name='idea[title]'/><br/>
               <textarea name='idea[description]'></textarea><br/>
               <p>Tags:</p>
               <input type='text' name='idea[tag]'/><br/>
               <input type='submit' value='Save Idea'/>
             </form>
-
-            <div class="box">
-                  <li><a href="http://turing.io"></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Something Else</a></li>
             </div>
 
-              <div id="" ="section">
+            <div class="box">
+              <h2>Tag Search</h2>
+                  <% ideas.each do |idea| %>
+                    <% if idea.tag != '' %>
+                  <li>
+                      <%= idea.tag %>
+                  </li>
+                    <%end%>
+                  <%end%>
+
+                  <li><a href="http://turing.io">link</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Something Else</a></li>
+
+            </div>
+
+              <div id="section">
               <ul>
                 <% ideas.each do |idea| %>
                   <li>
                     <%= idea.title %><br/>
-                    <%= idea.description %>
+                    <%= idea.description %><br/>
+
                     <table border="0">
                     <tr>
                       <td><form action="/<%= idea.id %>" method="POST">
@@ -42,7 +54,7 @@
                         <input type='submit' value="★"/>
                       </form></td>
                     </tr>
-                    </table>
+                    </table><br/>
 
                   </li>
               </ul>

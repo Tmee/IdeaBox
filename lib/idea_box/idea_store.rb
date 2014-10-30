@@ -1,4 +1,5 @@
-require 'yaml/store'
+require 'yaml/store'  # => true
+require 'idea'
 
 class IdeaStore
 
@@ -16,28 +17,21 @@ class IdeaStore
     end
   end
 
-  def self.find_words(idea)
-    # idea_search = []
-    # raw_ideas.each do |words|
-    #   idea_search << Idea.new(data.include?(words))
-    # end
-    # idea_search
-    idea_search = []
+  def self.search(phrase)
+    # match = all.select { |i| i.title.include?(phrase) }
+    # Idea.new(match)
     database.transaction do
-      idea_search << database['ideas'].include?(idea)
+      database['ideas'].select  {|i| i.title.include?(phrase)}
     end
-    "hello"
-    idea_search
   end
 
-  # def self.separate_words_in_idea(idea)
-  #   idea_words = idea.split!
-  #   idea_words
-  # end
+  def self.find(id)
+    raw_idea = find_raw_idea(id)
+    Idea.new(raw_idea.merge("id" => id))
+  end
 
   def self.database
     return @database if @database
-
     @database ||= YAML::Store.new('db/ideabox')
     @database.transaction do
         @database['ideas'] ||= []
@@ -51,9 +45,10 @@ class IdeaStore
     end
   end
 
-  def self.find(id)
-    raw_idea = find_raw_idea(id)
-    Idea.new(raw_idea.merge("id" => id))
+  def self.find_matches(phrase)
+    database.transaction do
+      database['ideas'].select  {|i| i.include?(phrase)}
+    end
   end
 
   def self.find_raw_idea(id)

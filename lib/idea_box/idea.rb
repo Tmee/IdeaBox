@@ -2,15 +2,18 @@ require 'yaml/store'
 
 class Idea
   include Comparable
-  attr_reader :title, :description, :rank, :id, :tag, :words
+  attr_reader :title, :description, :rank, :id, :tag
 
   def initialize(attributes = {})
     @title       = attributes["title"]
     @description = attributes["description"]
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
-    @tag         = attributes["tag"] || ''
-    @words       = attributes['words']
+    @tag         = attributes["tag"]
+  end
+
+  def self.search
+
   end
 
   def save
@@ -21,7 +24,8 @@ class Idea
   {
     "title" => title,
     "description" => description,
-    "rank" => rank
+    "rank" => rank,
+    "tag" => tag
   }
   end
 
@@ -36,5 +40,4 @@ class Idea
   def database
     Idea.database
   end
-
 end

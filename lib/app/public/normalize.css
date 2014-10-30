@@ -1,0 +1,163 @@
+.container{
+  position: relative;
+}
+
+.section{
+
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid blue 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.center{
+  text-align: center;
+  margin-left: auto;
+  background-color: #787878;
+  margin-right: auto;
+  width: 300px;
+  display: block;
+}
+
+.main {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid blue 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 200px;
+  height: 1000px;
+  margin: 1em;
+}
+subl /.
+
+
+a:active{
+    color: 006699;
+}
+a:hover
+{
+  font-weight: bold;
+  outline: 0;
+  color: #669933 ;
+  transition: color 0.3s;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: initial;
+  transition-delay: initial;
+  text-decoration:none;
+  outline: thin dotted;
+}
+
+h1 {;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20git push em;
+    display: block;
+    color: #0033CC;
+}
+
+h2 {
+    text-align: center;
+    background-color: #787878;
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+mark {
+    background: #ff0;
+    color: #055;
+}
+
+
+
+.demo-container {
+ height:300px;
+ overflow:hidden;
+ display:block;
+ position:relative;
+ /* CSS3 Gradient */
+ background: rgb(125,126,125);
+ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM3ZDdlN2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGUwZTBlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+ background: -moz-radial-gradient(center, ellipse cover,  rgba(125,126,125,1) 0%, rgba(14,14,14,1) 100%);
+ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(14,14,14,1)));
+ background: -webkit-radial-gradient(center, ellipse cover,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+ background: -o-radial-gradient(center, ellipse cover,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+ background: -ms-radial-gradient(center, ellipse cover,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+ background: radial-gradient(ellipse at center,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 );
+ }.bubble1, .bubble2, .bubble3, .bubble4 {
+ position:absolute;
+ display:block;
+ /* CSS3 Box Shadow */
+ box-shadow:0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+ -webkit-box-shadow:0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+ -moz-box-shadow:0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+ /* CSS3 Border Radius */
+ border-radius:50%;
+ -webkit-border-radius:50%;
+ -moz-border-radius:50%;
+ /* CSS3 Transition */
+ -webkit-transition: all .5s ease-in-out;
+ -moz-transition: all .5s ease-in-out;
+ -o-transition: all .5s ease-in-out;
+ transition: all .5s ease-in-out;
+ }
+.bubble1 {
+ width:100px;
+ height:100px;
+ top:20%;
+ left:50%;
+ }
+.bubble2 {
+ width:200px;
+ height:200px;
+ left:20%;
+ top:10%;
+ }
+.bubble3 {
+ width:150px;
+ height:150px;
+ left:50%;
+ top:40%;
+ }
+.bubble4 {
+ width:90px;
+ height:90px;
+ left:70%;
+ top:15%;
+ }
+.bubble1:hover {
+ margin-top:30px;
+ width:90px;
+ }
+.bubble2:hover {
+ margin-left:20px;
+ height:190px;
+ }
+.bubble3:hover {
+ margin-top:60px;
+ width:160px;
+ }
+.bubble4:hover {
+ margin-left:50px;
+ height:100px;
+ }
+.demo-text{
+ position:absolute;
+ bottom:20px;
+ right:15px;
+ font-size:36px;
+ color:#666;
+ text-shadow:0 2px 0 #000;
+ }
