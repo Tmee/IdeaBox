@@ -1,5 +1,4 @@
 require 'yaml/store'  # => true
-require 'idea'
 
 class IdeaStore
 
@@ -18,10 +17,15 @@ class IdeaStore
   end
 
   def self.search(phrase)
-    # match = all.select { |i| i.title.include?(phrase) }
-    # Idea.new(match)
-    database.transaction do
-      database['ideas'].select  {|i| i.title.include?(phrase)}
+    search_match = []
+    search_match = all.select  do |i|
+      if i.title == phrase
+        i
+      elsif i.description == phrase
+        i
+      elsif i.tag == phrase
+        i
+      end
     end
   end
 
@@ -42,12 +46,6 @@ class IdeaStore
   def self.delete(position)
     database.transaction do
       database['ideas'].delete_at(position)
-    end
-  end
-
-  def self.find_matches(phrase)
-    database.transaction do
-      database['ideas'].select  {|i| i.include?(phrase)}
     end
   end
 

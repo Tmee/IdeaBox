@@ -12,10 +12,6 @@ class Idea
     @tag         = attributes["tag"]
   end
 
-  def self.search
-
-  end
-
   def save
     IdeaStore.create(to_h)
   end
