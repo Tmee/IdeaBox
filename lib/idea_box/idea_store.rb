@@ -10,6 +10,12 @@ class IdeaStore
     ideas
   end
 
+  def self.salt_the_earth
+    database.transaction do
+      database['ideas'] = []
+    end
+  end
+
   def self.raw_ideas
     database.transaction do |db|
       db['ideas'] || []
