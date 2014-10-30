@@ -1,67 +1,60 @@
-<title>IdeaBox </title>
-  <body>
-      <div id="container">
-          <h1>IdeaBox</h1>
+<div id="container">
+  <h1>IdeaBox</h1>
 
-              <form method="get" action="/search">
-                Search: <input type="text" name='phrase'/><br/>
-                <input type='submit' value='Search Ideas'/>
-              </form>
+  <form method="get" action="/search">
+    Search: <input type="text" name='phrase'/><br/>
+    <input type='submit' value='Search Ideas'/>
+  </form>
 
-            <div class='center'>
-              <h2>Your Idea:</h2>
-              <form action='/' method='POST'>
-              <input type='text' name='idea[title]'/><br/>
-              <textarea name='idea[description]'></textarea><br/>
-              <p>Tags:</p>
-              <input type='text' name='idea[tag]'/><br/>
-              <input type='submit' value='Save Idea'/>
+  <div class='center'>
+    <h2>Your Idea:</h2>
+    <form action='/' method='POST'>
+      <input type='text' name='idea[title]'/><br/>
+      <textarea name='idea[description]'></textarea><br/>
+      <p>Tags:</p>
+      <input type='text' name='idea[tag]'/><br/>
+      <input type='submit' value='Save Idea'/>
+    </form>
+  </div>
+
+  <div class="box">
+    <h2>Tag Search</h2>
+    <ul>
+      <% ideas.each do |idea| %>
+        <% if idea.tag != ''%>
+          <li>
+            <form method="get" action="/<%= idea.tag %>/search">
+              <input type="submit" value='<%= idea.tag %>'/>
             </form>
-            </div>
+          </li>
+        <%end%>
+      <%end%>
+    </ul>
+  </div>
 
-            <div class="box">
-              <h2>Tag Search</h2>
-                  <% ideas.each do |idea| %>
-                    <% if idea.tag != ''%>
-                      <li>
-                      <form method="get" action="/<%= idea.tag %>/search">
-                            <input type="submit" value='<%= idea.tag %>'/>
-                      </form>
-                      </li>
-                    <%end%>
-                <%end%>
+  <div id="section">
+    <ul class="ideas">
+      <% ideas.each do |idea| %>
+        <li>
+          <span class="title"><%= idea.title %></span><br/>
+          <%= idea.description %><br/>
 
-                  <li><a href="http://turing.io">link</a></li>
-                  <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Something Else</a></li>
-
-            </div>
-
-              <div id="section">
-              <ul>
-                <% ideas.each do |idea| %>
-                  <li>
-                    <%= idea.title %><br/>
-                    <%= idea.description %><br/>
-
-                    <table border="0">
-                    <tr>
-                      <td><form action="/<%= idea.id %>" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="submit" value="delete"/>
-                      </form></td>
-                      <td><form method="get" action="/<%= idea.id %>/edit">
-                        <input type="submit" value='Edit'/>
-                      </form></td>
-                      <td><form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-                        <input type='submit' value="★"/>
-                      </form></td>
-                    </tr>
-                    </table><br/>
-
-                  </li>
-              </ul>
-              </div>
-              <% end %>
-            </ul>
-      </div>
-  </body>
+          <table border="0">
+            <tr>
+              <td><form action="/<%= idea.id %>" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <input type="submit" value="delete"/>
+              </form></td>
+              <td><form method="get" action="/<%= idea.id %>/edit">
+                  <input type="submit" value='Edit'/>
+              </form></td>
+              <td><form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+                  <input type='submit' value="★"/>
+              </form></td>
+            </tr>
+          </table><br/>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
